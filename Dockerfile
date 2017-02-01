@@ -2,12 +2,12 @@ FROM armhf/alpine
 
 LABEL maintainer "rlogiacco@gmail.com"
 
-ENV WEBROOT /usr/share/nginx/html
+ENV WEBROOT /srv/html
 
 RUN \
   apk add --no-cache nginx
 
-VOLUME ["/var/lib/nginx/html"]
+VOLUME ["/srv/html"]
 EXPOSE 80
 
 CMD nginx -g "daemon off;"
